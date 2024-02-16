@@ -29,33 +29,56 @@ Each notebook plays a crucial role in understanding the data, conducting analysi
 
 # Notebook 2: Exploratory Data Analysis (EDA)
 
-## 1. Distribution Analysis of Variables
+### 1. Distribution Analysis of Variables
 ![Distribution](images/2.png)
 
 **Observations:** 
 - The variables related to video metrics such as view count, like count, comment count, and share count exhibit right-skewed distributions, with the majority of videos having relatively low counts.
 - Despite the majority of videos having low counts, there are some videos with exceptionally high counts, particularly in terms of views and likes.
 
-## 2. Analysis of Claim Status and Verification Status
+### 2. Analysis of Claim Status and Verification Status
 ![Claim Status and Verification Status](images/3.png)
 
 **Observations:** 
 - Verified users are substantially outnumbered by unverified users, with significantly more unverified users posting both claims and opinions.
 - Active authors are more prevalent compared to banned authors for both claims and opinions, indicating a larger presence of active users on the platform.
 
-## 3. Median View Counts Analysis
+### 3. Median View Counts Analysis
 ![Median View Counts Analysis](images/4.png)
 
 **Observations:** 
 - Videos posted by non-active authors tend to have higher median view counts compared to those posted by active authors, suggesting a potential association between author activity status and video popularity.
 
-## 4. Overall View Count Analysis
+### 4. Overall View Count Analysis
 ![Overall View Count Analysis](images/5.png)
 
 **Observations:** 
 - Claim videos dominate the total view count, comprising the vast majority of views in the dataset, despite there being a similar number of claim and opinion videos.
 
-## 5. Outlier Threshold Modification
+### 5. Outlier Threshold Modification
 **Observations:** 
 - The count variables display heavy right-skewed distributions, indicating the presence of outliers. Modifying the outlier threshold based on the median and interquartile range (IQR) results in a lower threshold compared to using the third quartile, suggesting a more conservative approach to identifying outliers.
 
+
+# Notebook 3: Hypothesis Testing
+
+### 1. Hypothesis Formulation
+
+**Null Hypothesis ($H_0$):** There is no difference in the number of views between TikTok videos posted by verified accounts and TikTok videos posted by unverified accounts.
+
+**Alternative Hypothesis ($H_A$):** There is a difference in the number of views between TikTok videos posted by verified accounts and TikTok videos posted by unverified accounts.
+
+### 2. Hypothesis Test Result
+
+- **p-value:** 2.61e-120
+- **Interpretation:** The p-value is significantly lower than the chosen significance level (usually 0.05). Therefore, we reject the null hypothesis. This suggests that there is evidence to support the presence of a difference in average view counts between videos from verified and unverified accounts.
+
+### 3. Implications
+
+- The analysis indicates a statistically significant difference in average view counts between verified and unverified TikTok accounts.
+- Further investigation into the root causes of this difference in user behavior is warranted. For instance, exploring whether unverified accounts tend to post more sensational content or if they are associated with spam activities.
+  
+### 4. Next Steps
+
+- Building a regression model focused on the `verified_status` variable to analyze user behavior within the verified user group.
+- Given the skewed nature of the data and significant differences in account types, a logistic regression model is recommended for this analysis.
