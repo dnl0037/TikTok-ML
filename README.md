@@ -82,3 +82,34 @@ Each notebook plays a crucial role in understanding the data, conducting analysi
 
 - Building a regression model focused on the `verified_status` variable to analyze user behavior within the verified user group.
 - Given the skewed nature of the data and significant differences in account types, a logistic regression model is recommended for this analysis.
+
+
+# Notebook 4: Logistic Regression Model
+
+### 1. Multicollinearity Issues
+![Multicollinearity Issues](images/6.png)
+
+- **Observation**: The dataset contains a few strongly correlated variables, which may lead to multicollinearity issues when fitting a logistic regression model. To mitigate this, `video_like_count` was dropped from the model building process.
+
+### 2. Impact of Video Duration on Verified Status
+![Impact of Video Duration on Verified Status](images/7.png)
+
+- **Insight**: According to the logistic regression model, each additional second of the video is associated with a 0.0086 increase in the log-odds of the user having a verified status.
+
+### 3. Model Performance
+<table>
+  <tr>
+    <td><img src="images/8.png" alt="Model Performance1"></td>
+    <td><img src="images/9.png" alt="Model Performance2"></td>
+  </tr>
+</table>
+
+
+- **Findings**: The logistic regression model demonstrated acceptable predictive power, with a precision of 61% and a recall of 84%. Although overall accuracy was moderate, the model's recall rate indicates its effectiveness in identifying verified users.
+
+### 4. Consideration of Non-linear Relationships
+![Consideration of Non-linear Relationships](images/10.png)
+
+- **Observation**: The pair plot visualization suggested potential non-linear relationships between predictor variables and the target variable. This implies that logistic regression may not fully capture the complexity of the relationship, prompting consideration of more flexible modeling approaches.
+
+  
