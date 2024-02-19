@@ -1,6 +1,6 @@
 # Project: TikTok Claim Classification
 
-This project aims to utilize machine learning techniques to classify each data point as a claim or opinion. The project comprises five notebooks, each focusing on a different aspect of the data analysis process.
+This project aims to utilize machine learning techniques to classify each video according to whether it presents a claim or an opinion. The project comprises five notebooks, each focusing on a different aspect of the data analysis process.
 
 - Notebook 1 - Data Understanding: Initiates the exploration of the provided TikTok dataset by acquainting with the data, compiling summary information, and preparing for further analysis.
 
